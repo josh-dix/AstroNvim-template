@@ -87,7 +87,7 @@ return {
         ["<s-l>"] = { "<cmd>bn<cr>", desc = "Next Buffer" },
         ["<leader>ot"] = {
           function()
-            require("snacks.terminal").toggle("opencode --port --auto", { win = { position = "right", enter = false } })
+            require("snacks.terminal").toggle("opencode --auto", { win = { position = "right", enter = false } })
           end,
           desc = "Toggle OpenCode Terminal (AUTO APPROVE ON)",
         },
