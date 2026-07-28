@@ -85,6 +85,12 @@ return {
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         ["<s-h>"] = { "<cmd>bp<cr>", desc = "Previous Buffer" },
         ["<s-l>"] = { "<cmd>bn<cr>", desc = "Next Buffer" },
+        ["<leader>ot"] = {
+          function()
+            require("snacks.terminal").toggle("opencode --port", { win = { position = "right", enter = false } })
+          end,
+          desc = "Toggle OpenCode terminal",
+        },
       },
 
       t = {
