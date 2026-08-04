@@ -4,14 +4,19 @@
 -- This is just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
--- vim.g.clipboard = {
---   name = "OSC 52",
---   copy = {
---     ["+"] = require("vim.ui.clipboard.osc52").copy "+",
---     ["*"] = require("vim.ui.clipboard.osc52").copy "*",
---   },
---   paste = {
---     ["+"] = require("vim.ui.clipboard.osc52").paste "+",
---     ["*"] = require("vim.ui.clipboard.osc52").paste "*",
---   },
--- }
+local use_nvim_osc = os.getenv "USE_NVIM_OSC"
+
+if use_nvim_osc == "true" then
+  print "sandbox environment detected"
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy "+",
+      ["*"] = require("vim.ui.clipboard.osc52").copy "*",
+    },
+    paste = {
+      ["+"] = require("vim.ui.clipboard.osc52").paste "+",
+      ["*"] = require("vim.ui.clipboard.osc52").paste "*",
+    },
+  }
+end
