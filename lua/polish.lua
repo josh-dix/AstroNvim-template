@@ -7,7 +7,7 @@
 local use_nvim_osc = os.getenv "USE_NVIM_OSC"
 
 if use_nvim_osc == "true" then
-  print "sandbox environment detected"
+  -- print "sandbox environment detected"
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {
